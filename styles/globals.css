@@ -15,6 +15,10 @@ a {
 * {
   box-sizing: border-box;
 }
+.main-container {
+  width: 100%;
+  display: flex;
+}
 .svg-container {
   display: inline-block;
   position: relative;
@@ -22,6 +26,8 @@ a {
   padding-bottom: 100%;
   vertical-align: top;
   overflow: hidden;
+  margin: auto;
+  max-width: 1200px;
 }
 .svg-content {
   display: inline-block;

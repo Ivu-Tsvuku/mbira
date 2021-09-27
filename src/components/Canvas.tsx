@@ -5,14 +5,13 @@ import { d3SVGType } from '../types/types'
 
 function Canvas({ id, parentRef }: { id: string, parentRef: MutableRefObject<HTMLElement | null> }) {
     const [loading, setLoading] = useState(true)
-    let svg: d3SVGType
     useEffect(() => {
 
         setLoading(false)
 
         if (!loading) {
 
-            svg = d3.select(`#${id}`).append("svg")
+            const svg: d3SVGType = d3.select(`#${id}`).append("svg")
 
             if (parentRef.current) mbira(svg, parentRef.current.offsetWidth)
         }

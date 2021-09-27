@@ -53,6 +53,7 @@ function mbira(svg: d3SVGType, parentWidth: number) {
         .attr('opacity', 0.6)
         .attr('fill', (d) => applyColour(d))
         .attr('class', (d) => `${d.register}${d.position}`)
+        .style('cursor','pointer')
         .datum()
     return svg
 }

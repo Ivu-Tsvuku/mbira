@@ -27,11 +27,11 @@ h1 {
   display: inline-block;
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
   vertical-align: top;
   overflow: hidden;
   margin: auto;
   max-width: 1200px;
+  height: 70vh;
 }
 .svg-content {
   display: inline-block;

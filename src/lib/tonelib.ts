@@ -2,7 +2,9 @@ import * as Tone from "tone"
 
 export function play(frequency: number){
 
-    const synth = new Tone.OmniOscillator().toDestination()
+    const synth = new Tone.AMSynth().toDestination()
     synth.frequency.value = frequency
-    synth.start().stop("+"+ 0.5)
+    synth.volume.value = -24
+    synth.triggerAttackRelease(frequency, "8n");
+
 }

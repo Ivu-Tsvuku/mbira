@@ -1,5 +1,7 @@
 import * as d3 from "d3"
+import { mbiraTuning } from "../data/mbiraTunning"
 import { d3SVGType, d3Type, IMbiraCoordinate, ScaleBand, ScaleLinear } from "../types/types"
+import { play } from "./tonelib"
 const MARGIN = { LEFT: 20, TOP: 10, RIGHT: 20, BOTTOM: 100 }
 const { LEFT, TOP, RIGHT, BOTTOM } = MARGIN
 const HORIZONTAL_OFFSET = LEFT + RIGHT
@@ -56,12 +58,15 @@ export function handleMouseOut(event:any, data:any, clickedLabel:d3Type) {
          d3.select(event.target)
         .attr('r', 9)
         .attr('opacity', 0.5)
-        console.log({data, event, clickedLabel})
         clickedLabel.text('')
 }
 
-export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Type, WIDTH:number, HEIGHT:number) {
-    const {register, position, hand} = data
+export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Type, WIDTH:number, HEIGHT:number, tuning: string) {
+    const {register, position, hand, name} = data
+        const [selectedTuning] = mbiraTuning.filter( t =>  t.source === tuning)
+        const {frequencies} = selectedTuning
+        play(frequencies[name])
+        console.log({data, selectedTuning})
         clickedLabel
             .text(`${hand} hand - ${register}${position}`)
             .attr('fill', applyColour(data))

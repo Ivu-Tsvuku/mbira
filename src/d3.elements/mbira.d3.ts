@@ -6,7 +6,7 @@ import { applyColour, createGroup, getGroupWidth, getLimits, handleClick, handle
 import { d3SVGType, IMbiraCoordinate } from '../types/types'
 
 
-function mbira(svg: d3SVGType, parentWidth: number) {
+function mbira(svg: d3SVGType, parentWidth: number, tuning: string) {
     console.log({ parentWidth })
 
     svg
@@ -46,7 +46,7 @@ function mbira(svg: d3SVGType, parentWidth: number) {
     circles.enter().append('circle')
         .on('mouseover', handleMouseOver)
         .on('mouseout', (a,b) => handleMouseOut(a,b,clickedLabel))
-        .on('click', (a, b) => handleClick(a, b, clickedLabel, WIDTH, HEIGHT))
+        .on('click', (a, b) => handleClick(a, b, clickedLabel, WIDTH, HEIGHT, tuning))
         .attr('cx', (d) => x(d['x']))
         .attr('cy', (d) => y(d['y']))
         .attr('r', 9)

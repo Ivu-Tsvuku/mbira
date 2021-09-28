@@ -39,3 +39,42 @@ h1 {
   top: 0;
   left: 0;
 }
+
+.settings {
+  display: flex;
+  justify-content: center;
+}
+
+.tunings {
+  margin-bottom: 7px;
+  background: #bebebe;
+  padding: 7px;
+  border-radius: 7px;
+  list-style-type: none;
+  width: 140px;
+  overflow-wrap: inherit;
+  text-align: center;
+
+}
+.tuning-container {
+  display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 550px;
+    justify-content: space-around;
+}
+
+.tunings.selected {
+  background-color: pink;
+}
+
+
+.image-container {
+  width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+ img {
+   height : 100%
+ }

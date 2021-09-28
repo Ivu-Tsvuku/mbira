@@ -6,52 +6,29 @@ import styled from 'styled-components'
 
 function Settings() {
     const { tuning, setTuning } = useContext(TuningContext)
-    const StyledDiv = styled.div`
-    display: flex;
-    justify-content: center;
-`
-    const Select = styled.select`
-    
-    `
-    const H3 = styled.h3`
-        font-weight: 500;
-    `
-    const ImgCont = styled.div`
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;
-    `
-    const Img = styled.img`
-    height: 100%;
-    `
-    const Li = styled.li`
-    margin-bottom: 7px;
-    background: ${props => props.className !== 'selected'? '#bebebe': 'pink'};
-    padding: 7px;
-    border-radius: 7px;
-    list-style-type: none;
-    `
-    return (
-        <StyledDiv className="settings">
+   
+   
 
-            <ul>
+    return (
+        <div className="settings">
+
+            <ul className="tuning-container">
                 {mbiraTuning.map(({ source }: IMbiraTuning) => {
 
                     return (
-                        <Li
+                        <li
                             key={source}
-                            className={tuning === source ? 'selected': ''}
+                            className={tuning === source ? 'tunings selected': 'tunings'}
                             onClick={e => setTuning(source)}>
                             {source}
-                        </Li>
+                        </li>
                     )
                 })}
             </ul>
-            <ImgCont className="image-container">
-                <Img src={`/images/Ephat_Mujuru.jpeg`} alt="" /> 
-            </ImgCont>
-        </StyledDiv>
+            <div className="image-container">
+                <img src={`/images/Ephat_Mujuru.jpeg`} alt="" /> 
+            </div>
+        </div>
     )
 }
 

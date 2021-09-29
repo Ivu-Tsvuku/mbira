@@ -7,7 +7,7 @@ import Image from 'next/image'
 function Settings() {
     const { tuning, setTuning } = useContext(TuningContext)
    
-   
+
 
     return (
         <div className="settings">

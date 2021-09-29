@@ -1,4 +1,5 @@
 import * as d3 from "d3"
+import * as Tone from 'tone' 
 import { mbiraTuning } from "../data/mbiraTunning"
 import { d3SVGType, d3Type, IMbiraCoordinate, ScaleBand, ScaleLinear } from "../types/types"
 import { play } from "./tonelib"
@@ -63,12 +64,12 @@ export function handleMouseOut(event:any, data:any, clickedLabel:d3Type) {
         clickedLabel.text('')
 }
 
-export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Type, WIDTH:number, HEIGHT:number, tuning: string) {
+export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Type, WIDTH:number, HEIGHT:number, tuning: string, synth: Tone.AMSynth) {
     const {register, position, hand, name} = data
         const [selectedTuning] = mbiraTuning.filter( t =>  t.source === tuning)
         const {frequencies} = selectedTuning
         const freq: number = frequencies[name]
-        play(freq)
+        play(freq, synth)
         console.log({item,data, selectedTuning})
         d3.select(item.target)
         .attr('r', 27)

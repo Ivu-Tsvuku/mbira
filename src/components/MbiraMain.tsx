@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
+import { ToneContext } from "../contexts/ToneContext";
 import { TuningContext } from "../contexts/TuningContext";
 import Canvas from "./Canvas";
 import Settings from "./Settings";

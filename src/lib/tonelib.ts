@@ -1,10 +1,8 @@
 import * as Tone from "tone"
 
-export function play(frequency: number){
-
-    const synth = new Tone.AMSynth().toDestination()
+export function play(frequency: number, synth: Tone.AMSynth){
     synth.frequency.value = frequency
-    synth.volume.value = -24
+    synth.volume.value = -14
     synth.triggerAttackRelease(frequency, "8n");
 
 }

@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 import { BaseType, ValueFn } from 'd3'
 import { MutableRefObject } from 'react'
 import { mbiraCoordinates } from '../data/mbiraCoordinates'
-import { applyColour, createGroup, getGroupWidth, getLimits, handleClick, handleMouseOut, handleMouseOver, injectData } from '../lib/d3lib'
+import { applyColour, createGroup, getGroupWidth, getLimits, handleClick, handleMouseOut, handleMouseOver, injectData, limits } from '../lib/d3lib'
 import { d3SVGType, IMbiraCoordinate } from '../types/types'
 
 
@@ -11,7 +11,7 @@ function mbira(svg: d3SVGType, parentWidth: number, tuning: string) {
 
     svg
         .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", `0 0 ${parentWidth} 400`) // responsive
+        .attr("viewBox", `0 0 ${parentWidth} 600`) // responsive
         .classed("svg-content", true)
 
     const gridGroup01 = createGroup(svg, 'gridGroup01', 'group')
@@ -29,7 +29,7 @@ function mbira(svg: d3SVGType, parentWidth: number, tuning: string) {
         .range([0, WIDTH])
 
     const y = d3.scaleLinear()
-        .range([HEIGHT, 0])
+        .range([HEIGHT -limits.VERTICAL_OFFSET, 0])
 
     injectData(mbiraCoordinates, x, y, WIDTH, HEIGHT)
     const circles = gridGroup01.selectAll('circle')

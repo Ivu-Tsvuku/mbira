@@ -2,17 +2,19 @@ import * as d3 from "d3"
 import { mbiraTuning } from "../data/mbiraTunning"
 import { d3SVGType, d3Type, IMbiraCoordinate, ScaleBand, ScaleLinear } from "../types/types"
 import { play } from "./tonelib"
-const MARGIN = { LEFT: 20, TOP: 10, RIGHT: 20, BOTTOM: 100 }
+const MARGIN = { LEFT: 20, TOP: 0, RIGHT: 20, BOTTOM: 100 }
 const { LEFT, TOP, RIGHT, BOTTOM } = MARGIN
 const HORIZONTAL_OFFSET = LEFT + RIGHT
 const VERTICAL_OFFSET = TOP + BOTTOM
-const HEIGHT = 550 - VERTICAL_OFFSET
+const HEIGHT = 650 - VERTICAL_OFFSET
 const MIDDLE_Y = HEIGHT / 2
 
 export function getGroupWidth(GRID_WIDTH: number): number {
     return (GRID_WIDTH) - HORIZONTAL_OFFSET
 }
-
+export const limits = {
+    VERTICAL_OFFSET
+}
 export function createGroup(container: d3Type, id: string, type: string) {
     return container.append("g") // d3 group for keeping elements together
         .attr("id", id)
@@ -36,7 +38,7 @@ export function injectData(data: IMbiraCoordinate[], x: ScaleLinear, y: ScaleLin
     if (yMax !== undefined) y.domain([0, yMax + (yMax * 0.2)])
 
     const xAxisCall = d3.axisBottom(x)
-        .tickSize(-HEIGHT)
+        .tickSize((-HEIGHT +100))
 
     const yAxisCall = d3.axisLeft(y)
         .tickSize(-WIDTH)
@@ -67,7 +69,9 @@ export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Typ
         const {frequencies} = selectedTuning
         const freq: number = frequencies[name]
         play(freq)
-        console.log({data, selectedTuning})
+        console.log({item,data, selectedTuning})
+        d3.select(item.target)
+        .attr('r', 27)
         clickedLabel
             .text(`${hand} hand - ${register}${position} - ${freq}hz`)
             .attr('fill', 'black')

@@ -26,7 +26,7 @@ function Settings() {
                 })}
             </ul>
             <div className="image-container">
-                <Image height="300" width="300" src={`/images/${tuning.replace(' ','_')}.jpeg`} alt="" /> 
+                <Image height={200} width={200} src={`/images/${tuning.replace(' ','')}.jpeg`} alt="" /> 
             </div>
         </div>
     )

@@ -56,7 +56,7 @@ export function handleMouseOver(this: any) {
 
 export function handleMouseOut(event:any, data:any, clickedLabel:d3Type) {
          d3.select(event.target)
-        .attr('r', 9)
+        .attr('r', 14)
         .attr('opacity', 0.5)
         clickedLabel.text('')
 }

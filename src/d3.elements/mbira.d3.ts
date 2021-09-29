@@ -49,7 +49,7 @@ function mbira(svg: d3SVGType, parentWidth: number, tuning: string) {
         .on('click', (a, b) => handleClick(a, b, clickedLabel, WIDTH, HEIGHT, tuning))
         .attr('cx', (d) => x(d['x']))
         .attr('cy', (d) => y(d['y']))
-        .attr('r', 9)
+        .attr('r', 14)
         .attr('opacity', 0.6)
         .attr('fill', (d) => applyColour(d))
         .attr('class', (d) => `${d.register}${d.position}`)

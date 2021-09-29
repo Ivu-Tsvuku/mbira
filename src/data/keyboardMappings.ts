@@ -1,5 +1,5 @@
 import { INoteNameObj, INoteNameObjInverted, KeyStringObject } from "../types/types";
-
+//TODO remap this to list of arrays, then build object from that
 export const keyBoardMapping: INoteNameObj = {
     "h": "B1",
     "g": "B2",

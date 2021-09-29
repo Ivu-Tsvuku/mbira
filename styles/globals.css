@@ -43,6 +43,7 @@ h1 {
 .settings {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tunings {
@@ -93,3 +94,16 @@ h1 {
  img {
    height : 100%
  }
+.keyboard-toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bindings {
+  cursor: pointer;
+}
+
+.bindings.hide{
+  opacity: 0.3;
+}

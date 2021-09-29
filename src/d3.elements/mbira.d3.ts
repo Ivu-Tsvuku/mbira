@@ -8,7 +8,7 @@ import { applyColour, createGroup, getGroupWidth, getLimits, handleClick, handle
 import { d3SVGType, IMbiraCoordinate } from '../types/types'
 
 
-function mbira(svg: d3SVGType, parentWidth: number, tuning: string, synth: Tone.AMSynth) {
+function mbira(svg: d3SVGType, parentWidth: number, tuning: string, synth: Tone.AMSynth, keyBVis: boolean) {
 
     svg
         .attr("preserveAspectRatio", "xMinYMin meet")
@@ -77,6 +77,7 @@ function mbira(svg: d3SVGType, parentWidth: number, tuning: string, synth: Tone.
         .attr('y', (d) => y(d['y'] + 1.7))
         .attr('font-size', '32px')
         .attr('text-anchor', 'middle')
+        .attr('opacity', ()=> keyBVis ? 1 : 0)
         .text((d)=> noteMapping[d.name])
 
     return svg

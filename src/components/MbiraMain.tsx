@@ -7,6 +7,7 @@ import Settings from "./Settings";
 
 function MbiraMain() {
     const [tuning, setTuning] = useState('Equal Temperament')
+    const [ keyBVis, setKeyBVis ] = useState(true)
     const [synth, setSynth] = useState({} as Tone.AMSynth)
     useEffect(() => {
 
@@ -17,7 +18,7 @@ function MbiraMain() {
 
     return typeof ref.current === "object" ? <div className="main-container">
         <h1>MBIRA</h1>
-        <TuningContext.Provider value={{ tuning, setTuning }}>
+        <TuningContext.Provider value={{ tuning, setTuning, keyBVis, setKeyBVis }}>
             { Object.keys(synth).length && <ToneContext.Provider value={synth}>
 
                 <Settings />

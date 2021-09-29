@@ -6,6 +6,7 @@ export type d3Type = d3.Selection<any, any, any, any>
 export type ScaleLinear = d3.ScaleLinear<number, number, never>
 export type ScaleBand = d3.ScaleBand<string>
 export type SetStateString = Dispatch<SetStateAction<string>>
+export type SetStateBool = Dispatch<SetStateAction<boolean>>
 export type KeyStringObject = {[key:string]: string}
 
 export interface IMbiraCoordinate {

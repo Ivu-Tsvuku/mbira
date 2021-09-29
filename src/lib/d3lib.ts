@@ -70,7 +70,6 @@ export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Typ
         const {frequencies} = selectedTuning
         const freq: number = frequencies[name]
         play(freq, synth)
-        console.log({item,data, selectedTuning})
         d3.select(item.target)
         .attr('r', 27)
         clickedLabel

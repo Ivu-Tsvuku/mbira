@@ -1,9 +1,9 @@
 import * as d3 from 'd3'
 import { MutableRefObject, useContext, useEffect, useState } from 'react'
-import { ToneContext } from '../contexts/ToneContext'
 import { TuningContext } from '../contexts/TuningContext'
 import mbira from '../d3.elements/mbira.d3'
 import { d3SVGType } from '../types/types'
+import { ToneContext } from '../contexts/ToneContext'
 
 function Canvas({ id, parentRef }: {id: string, parentRef: MutableRefObject<HTMLElement | null> }) {
     const [loading, setLoading] = useState(true)
@@ -25,7 +25,7 @@ function Canvas({ id, parentRef }: {id: string, parentRef: MutableRefObject<HTML
             d3.select(`svg`).remove()
             setLoading(true)
         }
-    }, [loading, id, parentRef, tuning, synth])
+    }, [loading, id, parentRef, tuning])
 
     return null
 }

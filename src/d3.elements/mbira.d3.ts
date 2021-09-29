@@ -9,7 +9,6 @@ import { d3SVGType, IMbiraCoordinate } from '../types/types'
 
 
 function mbira(svg: d3SVGType, parentWidth: number, tuning: string, synth: Tone.AMSynth) {
-    console.log({ parentWidth })
 
     svg
         .attr("preserveAspectRatio", "xMinYMin meet")

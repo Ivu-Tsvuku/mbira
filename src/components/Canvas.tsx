@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 import { MutableRefObject, useContext, useEffect, useState } from 'react'
-import { TuningContext } from '../contexts/tuningContext'
+import { TuningContext } from '../contexts/TuningContext'
 import mbira from '../d3.elements/mbira.d3'
 import { d3SVGType } from '../types/types'
 

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { TuningContext } from "../contexts/tuningContext"
+import { TuningContext } from "../contexts/TuningContext"
 import { mbiraTuning } from "../data/mbiraTunning"
 import { IMbiraTuning, SetStateString } from "../types/types"
 import Image from 'next/image'

@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { TuningContext } from "../contexts/tuningContext"
 import { mbiraTuning } from "../data/mbiraTunning"
 import { IMbiraTuning, SetStateString } from "../types/types"
-import styled from 'styled-components'
+import Image from 'next/image'
 
 function Settings() {
     const { tuning, setTuning } = useContext(TuningContext)
@@ -26,7 +26,7 @@ function Settings() {
                 })}
             </ul>
             <div className="image-container">
-                <img src={`/images/Ephat_Mujuru.jpeg`} alt="" /> 
+                <Image height="300" width="300" src={`/images/${tuning.replace(' ','_')}.jpeg`} alt="" /> 
             </div>
         </div>
     )

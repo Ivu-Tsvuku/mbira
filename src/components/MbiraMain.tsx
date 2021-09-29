@@ -10,7 +10,7 @@ function MbiraMain() {
     const ref = useRef(null)
 
     return typeof ref.current === "object" ? <div className="main-container">
-        <h1>...</h1>
+        <h1>MBIRA</h1>
         <TuningContext.Provider value={{tuning, setTuning}}>
             <Settings />
             <div ref={ref} id="anchor" className="main svg-container">

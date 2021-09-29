@@ -47,14 +47,24 @@ h1 {
 
 .tunings {
   margin-bottom: 7px;
-  background: #bebebe;
-  padding: 7px;
+  background: #e1e1e1;
+  padding: 13px 7px;
   border-radius: 7px;
   list-style-type: none;
-  width: 140px;
+  width: 145px;
   overflow-wrap: inherit;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
 
+.tunings:hover {
+  font-weight: 600;
+  background: #f0f0f0;
+  box-shadow: 2px 2px 5px 1px #5f5a5a;
 }
 .tuning-container {
   display: flex;
@@ -65,15 +75,20 @@ h1 {
 }
 
 .tunings.selected {
-  background-color: pink;
+  background-color: black;
+  color: white;
+  font-weight: 700;
 }
-
+.tunings.selected:hover{
+  font-weight: 700;
+}
 
 .image-container {
   width: 200px;
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
+    border: black 5px solid;
 }
  img {
    height : 100%

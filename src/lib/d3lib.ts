@@ -65,11 +65,12 @@ export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Typ
     const {register, position, hand, name} = data
         const [selectedTuning] = mbiraTuning.filter( t =>  t.source === tuning)
         const {frequencies} = selectedTuning
-        play(frequencies[name])
+        const freq: number = frequencies[name]
+        play(freq)
         console.log({data, selectedTuning})
         clickedLabel
-            .text(`${hand} hand - ${register}${position}`)
-            .attr('fill', applyColour(data))
+            .text(`${hand} hand - ${register}${position} - ${freq}hz`)
+            .attr('fill', 'black')
 }
 
 

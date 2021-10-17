@@ -83,19 +83,6 @@ export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Typ
             .attr('fill', 'black')
 }
 
-/*
-export function applyColour(dataPoint: IMbiraCoordinate): string {
-
-    switch (dataPoint.register) {
-        case "B": return "blue"
-        case "T": return "orange"
-        case "R": return "red"
-        default: return ''
-    }
-}
-*/
-
-
 export function applyColour(dataPoint: IMbiraCoordinate): string {
    return mbiraColours[ dataPoint.name]
 }

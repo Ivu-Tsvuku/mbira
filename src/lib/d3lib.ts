@@ -3,12 +3,18 @@ import * as Tone from 'tone'
 import { mbiraTuning } from "../data/mbiraTunning"
 import { d3SVGType, d3Type, IMbiraCoordinate, ScaleBand, ScaleLinear } from "../types/types"
 import { play } from "./tonelib"
+
+import {getAllOctaveColours} from "../data/colours"
+
 const MARGIN = { LEFT: 20, TOP: 0, RIGHT: 20, BOTTOM: 100 }
 const { LEFT, TOP, RIGHT, BOTTOM } = MARGIN
 const HORIZONTAL_OFFSET = LEFT + RIGHT
 const VERTICAL_OFFSET = TOP + BOTTOM
 const HEIGHT = 650 - VERTICAL_OFFSET
 const MIDDLE_Y = HEIGHT / 2
+
+const mbiraColours = getAllOctaveColours()
+
 
 export function getGroupWidth(GRID_WIDTH: number): number {
     return (GRID_WIDTH) - HORIZONTAL_OFFSET
@@ -77,7 +83,7 @@ export function handleClick(item: any, data: IMbiraCoordinate,clickedLabel:d3Typ
             .attr('fill', 'black')
 }
 
-
+/*
 export function applyColour(dataPoint: IMbiraCoordinate): string {
 
     switch (dataPoint.register) {
@@ -86,4 +92,10 @@ export function applyColour(dataPoint: IMbiraCoordinate): string {
         case "R": return "red"
         default: return ''
     }
+}
+*/
+
+
+export function applyColour(dataPoint: IMbiraCoordinate): string {
+   return mbiraColours[ dataPoint.name]
 }
